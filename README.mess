@@ -1,0 +1,9 @@
+# About Trivial-Deprecate
+This library implements a simple deprecation mechanism, and hooks into implementation-provided facilities when possible. The main entry point is ``declaim-deprecated`` to mark a definition as deprecated:
+
+:: common lisp
+(trivial-deprecate:declaim-deprecated (function my-foo)
+  :alternatives (my-foo2))
+::
+
+The interface is portable to all implementations, though use-warnings may not be issued for all definitions on all implementations.
