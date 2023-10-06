@@ -8,5 +8,7 @@
   :bug-tracker "https://github.com/shinmera/trivial-deprecate/issues"
   :source-control (:git "https://github.com/shinmera/trivial-deprecate.git")
   :serial T
-  :components ((:file "trivial-deprecate"))
+  :components ((:file "package")
+               (:file "trivial-deprecate")
+               (:file "documentation"))
   :depends-on ())
