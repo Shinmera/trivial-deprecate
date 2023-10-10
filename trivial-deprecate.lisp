@@ -26,11 +26,13 @@
   (defun since-version (condition)
     (sb-ext:deprecation-condition-version condition))
   (defun alternatives (condition)
-    (sb-ext:deprecation-condition-replacements))
+    (sb-ext:deprecation-condition-replacements condition))
   (defun description (condition)
+    (declare (ignore condition))
     NIL))
 
 (defmacro declaim-deprecated ((kind name) &key version (software (package-name (symbol-package name))) alternatives description)
+  (declare (ignore description))
   (unless (listp alternatives)
     (setf alternatives (list alternatives)))
   #+sbcl
@@ -64,4 +66,3 @@
                  whole))
              (T
               NIL))))))
-
